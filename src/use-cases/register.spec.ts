@@ -49,7 +49,7 @@ describe('Register Use Case', () => {
     })
 
     // Espero que a promise seja rejeitada e o retorno seja a instancia do tipo de erro
-    expect(() =>
+    await expect(() =>
       registerUseCase.execute({
         name: 'John Doe',
         email,
