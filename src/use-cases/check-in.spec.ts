@@ -1,13 +1,12 @@
 import { InMemoryCheckInsRepostiory } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { CheckInUseCase } from './check-in'
-import { beforeAll, describe, expect, it } from 'vitest'
-import { beforeEach } from 'node:test'
+import { beforeEach, describe, expect, it } from 'vitest'
 
 let checkInRepository: InMemoryCheckInsRepostiory
 let sut: CheckInUseCase
 
 describe('Check-in User Case', () => {
-  beforeAll(() => {
+  beforeEach(() => {
     checkInRepository = new InMemoryCheckInsRepostiory()
     sut = new CheckInUseCase(checkInRepository)
   })
